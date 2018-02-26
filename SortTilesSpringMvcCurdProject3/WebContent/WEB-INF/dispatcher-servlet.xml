@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:p="http://www.springframework.org/schema/p" 
+  xmlns:mvc="http://www.springframework.org/schema/mvc"
+  xmlns:context="http://www.springframework.org/schema/context"
+  xmlns:security="http://www.springframework.org/schema/security" 
+   xmlns:tx="http://www.springframework.org/schema/tx"
+  xsi:schemaLocation="
+   http://www.springframework.org/schema/beans 
+   http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+   http://www.springframework.org/schema/context 
+   http://www.springframework.org/schema/context/spring-context-4.0.xsd
+   http://www.springframework.org/schema/mvc 
+   http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd
+   http://www.springframework.org/schema/security
+   http://www.springframework.org/schema/security/spring-security-4.0.xsd
+   http://www.springframework.org/schema/tx 
+   http://www.springframework.org/schema/tx/spring-tx-4.0.xsd">
+
+   
+  
+  
+   <security:http use-expressions="true" >
+  
+   <!-- <security:intercept-url pattern="/gotoLogin.do" access="IS_AUTHENTICATED_ANONYMOUSLY"/>
+   <security:intercept-url pattern="/geoHierList.do" access="ROLE_ADMIN" />
+     <security:intercept-url pattern="/**" access="ROLE_USER" /> -->
+
+   <security:csrf disabled="true"/>
+   
+   
+       <security:form-login 
+       login-page="/gotoLogin.do"
+       login-processing-url="/geoHirachDisplay.do"
+       username-parameter="username"
+       password-parameter="password"
+       default-target-url="/geoHirachDisplay.do"
+       authentication-failure-url="/gotoLogin.do" />    
+       
+      <!--  <security:intercept-url pattern="/gotoLogin.do" access="IS_AUTHENTICATED_ANONYMOUSLY"/>
+   <security:intercept-url pattern="/geoHierList.do" access="ROLE_ADMIN" />
+     <security:intercept-url pattern="/**" access="ROLE_USER" /> -->
+     
+     <security:logout logout-url="/logout.do"
+     logout-success-url="/gotoLogin.do"
+     invalidate-session="true"/>
+
+  
+  	</security:http>
+  	
+<!--  <security:http use-expressions="true">
+  	<security:intercept-url pattern="/gotoLogin.do" access="IS_AUTHENTICATED_ANONYMOUSLY"/>
+   <security:intercept-url pattern="/geoHierList.do" access="ROLE_ADMIN" />
+     <security:intercept-url pattern="/**" access="ROLE_USER" />
+     
+     <security:logout logout-url="/logout.do"
+     logout-success-url="/gotoLogin.do"
+     invalidate-session="true"/>
+  	</security:http> -->
+  	
+  	
+  	
+  	<security:authentication-manager>
+       <security:authentication-provider>
+       <security:user-service>
+       <security:user name="slokam" password="slokam" authorities="ROLE_USER"/>
+
+       </security:user-service>
+       </security:authentication-provider>
+       </security:authentication-manager>
+       
+ <!--   <security:http auto-config="true">
+   <security:intercept-url pattern="/gotoLogin.do" access="IS_AUTHENTICATED_ANONYMOUSLY"/>
+   <security:intercept-url pattern="/**" access="ROLE_USER" />
+<security:intercept-url pattern="/**" access="ROLE_ADMIN" />
+</security:http> -->
+   
+<mvc:annotation-driven/>
+<tx:annotation-driven/>
+  <context:annotation-config /> 
+  <context:component-scan base-package="com.st.curd" />
+
+  
+ 
+
+  
+  
+  <bean id="viewResolver" class="org.springframework.web.servlet.view.UrlBasedViewResolver">
+<property name="viewClass" value="org.springframework.web.servlet.view.tiles2.TilesView"/>
+</bean>
+<bean id="tilesConfigurer" class="org.springframework.web.servlet.view.tiles2.TilesConfigurer">
+<property name="definitions">
+<list>
+<value>/WEB-INF/tiles.xml</value>
+</list>
+
+</property>
+</bean>
+  
+  
+
+<bean id="ht" class="org.springframework.orm.hibernate4.HibernateTemplate">
+<property name="sessionFactory" ref="sessionFactory"></property>
+</bean>
+  
+<bean id="sessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+<property name="dataSource" ref="dataSource"/>
+<property name="hibernateProperties">
+<props>
+<prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
+<prop key="hibernate.show_sql">true</prop>
+</props>
+</property>
+<property name="annotatedClasses">
+<list>
+<value>com.st.curd.pojo.GeoHierPojo</value>
+</list>
+</property>
+</bean>
+<bean id="transactionManager" class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+<property name="sessionFactory" ref="sessionFactory"></property>
+</bean>
+  
+<bean id = "dataSource" class= "org.apache.commons.dbcp2.BasicDataSource">
+<property name="driverClassName" value="com.mysql.jdbc.Driver"/>
+<property name="url" value="jdbc:mysql://localhost:3306/login"/>
+<property name="username" value="root"/>
+<property name="password" value="root"/>
+</bean>
+</beans>

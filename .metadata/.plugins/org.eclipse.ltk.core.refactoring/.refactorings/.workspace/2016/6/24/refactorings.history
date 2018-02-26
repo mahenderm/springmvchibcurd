@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;TilesExcelJsp&apos; to &apos;TilesExcelJspAop&apos;" description="Rename resource &apos;TilesExcelJsp&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="/TilesExcelJsp" name="TilesExcelJspAop" stamp="1465623156499" updateReferences="true"/>
+</session>

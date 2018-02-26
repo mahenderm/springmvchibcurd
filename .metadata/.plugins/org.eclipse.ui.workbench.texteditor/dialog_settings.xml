@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
+		<item value="257" key="DIALOG_WIDTH"/>
+		<item value="171" key="DIALOG_Y_ORIGIN"/>
+		<item value="381" key="DIALOG_HEIGHT"/>
+		<item value="415" key="DIALOG_X_ORIGIN"/>
+		<item value="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI" key="DIALOG_FONT_NAME"/>
+	</section>
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
+		<item value="true" key="wrap"/>
+		<item value="false" key="isRegEx"/>
+		<item value="false" key="casesensitive"/>
+		<item value="false" key="incremental"/>
+		<item value="false" key="wholeword"/>
+		<item value="" key="selection"/>
+		<list key="findhistory">
+			<item value="Auditdao"/>
+			<item value="insertinto"/>
+			<item value="trase"/>
+			<item value="trace"/>
+			<item value="&lt;td class=&quot;logo&quot;&gt;"/>
+			<item value="&lt;td class=&quot;logo&quot;&gt;&#x0A;&#x09;&#x09;&lt;table align=&quot;right&quot; class=&quot;table_width&quot; border=&quot;0&quot; cellspacing=&quot;0&quot; cellpadding=&quot;0&quot;&gt;&#x0A;        &lt;tbody&gt;&lt;tr&gt; &#x0A;          &lt;td class=&quot;info_welcome&quot; rowspan=&quot;2&quot;&gt;Welcome:&lt;/td&gt;&#x0A;          &lt;td height=&quot;12&quot;&gt;&lt;/td&gt;&#x0A;          &lt;td&gt;&lt;/td&gt;&#x0A;          &lt;td&gt;&lt;/td&gt;&#x0A;          &lt;td&gt;&lt;/td&gt;&#x0A;          &lt;td&gt;&lt;/td&gt;&#x0A;          &lt;td class=&quot;info_logout&quot; onmouseover=&quot;this.className=&apos;info_logoutOver&apos;&quot; onmouseout=&quot;this.className=&apos;info_logout&apos;&quot; onclick=&quot;logoff(&apos;../login.html&apos;);&quot; rowspan=&quot;2&quot;&gt;Logout&lt;/td&gt;&#x0A;        &lt;/tr&gt;&#x0A;        &lt;tr&gt; &#x0A;          &lt;td class=&quot;info_data&quot;&gt;Mr. Ram&lt;/td&gt;&#x0A;          &lt;td class=&quot;info&quot;&gt;Role:&lt;/td&gt;&#x0A;          &lt;td class=&quot;info_data&quot;&gt;Administrator&lt;/td&gt;&#x0A;          &lt;td class=&quot;info&quot;&gt;Location:&lt;/td&gt;&#x0A;          &lt;td class=&quot;info_data&quot;&gt;Hyderabad&lt;/td&gt;&#x0A;        &lt;/tr&gt;&#x0A;      &lt;/tbody&gt;&lt;/table&gt;&#x0A;&#x09;&#x0A;&#x09;&lt;/td&gt;"/>
+		</list>
+		<list key="replacehistory">
+		</list>
+	</section>
+</section>
